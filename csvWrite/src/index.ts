@@ -37,102 +37,101 @@ writer.pridetiEilute([
   },
 ]);
 
-// writer.save('./data/mokejimai.csv');
+writer.save('./data/mokejimai.csv');
 
-function logReturnString(value: string): string {
-  console.log(value);
-  return value;
-}
-function logReturnNumber(value: number): number {
-  console.log(value);
-  return value;
-}
-function logReturnBoolean(value: boolean): boolean {
-  console.log(value);
-  return value;
-}
-function logReturnValue<T>(value: T): T {
-  console.log(value);
-  return value;
-}
-const res3 = logReturnValue<string>('Paulius');
-const res4 = logReturnValue<number>(34);
-const res5 = logReturnValue<boolean>(true);
+// function logReturnString(value: string): string {
+//   console.log(value);
+//   return value;
+// }
+// function logReturnNumber(value: number): number {
+//   console.log(value);
+//   return value;
+// }
+// function logReturnBoolean(value: boolean): boolean {
+//   console.log(value);
+//   return value;
+// }
+// function logReturnValue<T>(value: T): T {
+//   console.log(value);
+//   return value;
+// }
+// const res3 = logReturnValue<string>('Paulius');
+// const res4 = logReturnValue<number>(34);
+// const res5 = logReturnValue<boolean>(true);
 
-function getRandomArrayValue<T>(values: T[]): T {
-  const i = Math.floor(Math.random() * values.length);
-  return values[i];
-}
-interface User {
-  name: string;
-  score: number;
-}
-const users: User[] = [
-  { name: 'Eligijus', score: 200 },
-  { name: 'Juozas', score: 150 },
-  { name: 'Petras', score: 70 },
-  { name: 'Lukas', score: 90 },
-];
-const randomUser = getRandomArrayValue<User>(users);
-console.log(randomUser);
+// function getRandomArrayValue<T>(values: T[]): T {
+//   const i = Math.floor(Math.random() * values.length);
+//   return values[i];
+// }
+// interface User {
+//   name: string;
+//   score: number;
+// }
+// const users: User[] = [
+//   { name: 'Eligijus', score: 200 },
+//   { name: 'Juozas', score: 150 },
+//   { name: 'Petras', score: 70 },
+//   { name: 'Lukas', score: 90 },
+// ];
+// const randomUser = getRandomArrayValue<User>(users);
+// console.log(randomUser);
 
-interface HasID {
-  id: number;
-}
-function addIdToValue<T>(value: T): T & HasID {
-  const id = Math.random();
-  return { ...value, id };
-}
-interface Post {
-  title: string;
-  likes: number;
-}
-const post = addIdToValue<Post>({ title: 'TypeScript valdo!', likes: 2 });
-console.log(post.id, post.title, post.likes);
+// interface HasID {
+//   id: number;
+// }
+// function addIdToValue<T>(value: T): T & HasID {
+//   const id = Math.random();
+//   return { ...value, id };
+// }
+// interface Post {
+//   title: string;
+//   likes: number;
+// }
+// const post = addIdToValue<Post>({ title: 'TypeScript valdo!', likes: 2 });
+// console.log(post.id, post.title, post.likes);
 
-interface Collection<T> {
-  data: T[];
-  name: string;
-}
-const collection1: Collection<string> = {
-  data: ['pienas', 'kava', 'cukrus'],
-  name: 'drink ingredients',
-};
-const collection2: Collection<number> = {
-  data: [6, 9, 42, 8, 10, 21],
-  name: 'winning lottery numbers',
-};
-function randomCollectionItem<T>(c: Collection<T>): T {
-  const i = Math.floor(Math.random() * c.data.length);
-  return c.data[i];
-}
-const res1 = randomCollectionItem<string>(collection1);
-const res2 = randomCollectionItem(collection2);
+// interface Collection<T> {
+//   data: T[];
+//   name: string;
+// }
+// const collection1: Collection<string> = {
+//   data: ['pienas', 'kava', 'cukrus'],
+//   name: 'drink ingredients',
+// };
+// const collection2: Collection<number> = {
+//   data: [6, 9, 42, 8, 10, 21],
+//   name: 'winning lottery numbers',
+// };
+// function randomCollectionItem<T>(c: Collection<T>): T {
+//   const i = Math.floor(Math.random() * c.data.length);
+//   return c.data[i];
+// }
+// const res1 = randomCollectionItem<string>(collection1);
+// const res2 = randomCollectionItem(collection2);
 
-console.log(res1, res2);
+// console.log(res1, res2);
 
-class DataCollection<T>{
-    constructor(private data: T[]){}
-    loadOne(): T[]{
-        return this.data
-    }
-    add(value: T): T[]{
-        this.data.push(value)
-        return this.data
-    }
-    
-}
+// class DataCollection<T>{
+//     constructor(private data: T[]){}
+//     loadOne(): T[]{
+//         return this.data
+//     }
+//     add(value: T): T[]{
+//         this.data.push(value)
+//         return this.data
+//     }
 
-interface User {
-   name: string
-   score: number 
-}
-const users = new DataCollection<User>([
-    {name:'Inga', score: 125}
-    {name: 'Aurelija', score: 100}
-    {name: 'Laura', score: 150}
-])
-users.add({name: 'Rita', score: 50})
-console.log('load one - ', users.loadOne());
-console.log('load all - ', users.loadAll());
+// }
 
+// interface User {
+//    name: string
+//    score: number
+// }
+// const users1 = new DataCollection<User>([
+//     {name:'Inga', score: 125}
+//     {name: 'Aurelija', score: 100}
+//     {name: 'Laura', score: 150}
+// ])
+// users1.add({name: 'Rita', score: 50})
+// console.log('load one - ', users1.loadOne());
+// console.log('load all - ', users1.loadAll());
